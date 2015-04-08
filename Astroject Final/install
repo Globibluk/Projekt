@@ -1,0 +1,17 @@
+#! /bin/bash
+#install
+
+cd src
+
+all=`ls`
+
+ls | echo
+
+for folder in $all ; do
+	if  [[ $folder != "sprites" ]] ; then
+	javac $folder/*.java
+	fi
+done
+
+echo 'java astroPack.AstroMain' > run
+chmod +x run
